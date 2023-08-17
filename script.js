@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let currentCategory = ""; // Определение currentCategory здесь
+    
     const womenButton = document.getElementById("women-button");
     const menButton = document.getElementById("men-button");
     const teenButton = document.getElementById("teen-button");
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (quotes.length > 0) {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             quoteText.textContent = quotes[randomIndex];
+            currentCategory = category; // Обновление текущей категории
         } else {
             quoteText.textContent = "Нет доступных цитат";
         }
@@ -40,8 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         currentCategory = "";
         showHomePage();
     });
-
-    let currentCategory = "";
 
     function showHomePage() {
         document.querySelector(".app").style.display = "flex";
